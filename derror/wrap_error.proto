@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package derror;
+
+enum ErrorLevel {
+    Common = 0;
+    Serious = 2012;
+}
+
+message WrapError {
+    string Message = 1;
+    uint32 Code = 2;  // 特殊的code，默认为 codes.Unknown
+    
+    bool Unack = 4;
+    
+    bool Tips = 3;
+	  string FriendlyMessage = 5; // 友好的信息
+
+    ErrorLevel Level = 6; // 级别，默认为0，某些场景下，需要根据不同级别的错误做出不一样的逻辑
+}

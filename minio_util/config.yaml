@@ -1,0 +1,5 @@
+
+
+
+bucket_name: "test"
+k8s_namespace: "daily"
